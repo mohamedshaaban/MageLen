@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="checkout" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="checkout.root">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="checkout" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="steps" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="shipping-step" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="shippingAddress" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="shipping-address-fieldset" xsi:type="array">
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="firstname" xsi:type="array">
+                                                                    <item name="sortOrder" xsi:type="string">1</item>
+                                                                </item>
+                                                                <item name="lastname" xsi:type="array">
+                                                                    <item name="sortOrder" xsi:type="string">2</item>
+                                                                </item>
+                                                                <item name="telephone" xsi:type="array">
+                                                                    <item name="sortOrder" xsi:type="string">3</item>
+                                                                </item>
+
+
+                                                                <item name="postcode" xsi:type="array">
+                                                                    <item name="sortOrder" xsi:type="string">96</item>
+                                                                    <item name="required-entry" xsi:type="boolean">false</item>
+                                                                </item>
+
+                                                                <item name="vat_id" xsi:type="array">
+                                                                    <item name="sortOrder" xsi:type="string">46</item>
+                                                                </item>
+                                                                <item name="country_id" xsi:type="array">
+                                                                    <item name="sortOrder" xsi:type="string">4</item>
+                                                                </item>
+                                                                <item name="city" xsi:type="array">
+                                                                    <item name="sortOrder" xsi:type="string">5</item>
+                                                                </item>
+                                                                <item name="region_id" xsi:type="array">
+                                                                    <item name="sortOrder" xsi:type="string">6</item>
+                                                                </item>
+                                                                <item name="agreement[1]" xsi:type="array">
+                                                                    <item name="sortOrder" xsi:type="string">7</item>
+                                                                </item>
+
+                                                                <item name="username" xsi:type="array">
+                                                                    <item name="sortOrder" xsi:type="string">99</item>
+                                                                </item>
+
+
+
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                        <item name="after-place-agreements" xsi:type="array">
+                            <item name="component" xsi:type="string">uiComponent</item>
+                            <item name="displayArea" xsi:type="string">after-place-agreements</item>
+                            <item name="dataScope" xsi:type="string">before-place-order</item>
+                            <item name="provider" xsi:type="string">checkoutProvider</item>
+                            <item name="config" xsi:type="array">
+                                <item name="template" xsi:type="string">Magento_Checkout/payment/before-place-order</item>
+                            </item>
+                            <item name="children" xsi:type="array">
+                                <item name="agreementss" xsi:type="array">
+                                    <item name="component" xsi:type="string">Magento_CheckoutAgreements/js/view/checkout-agreements</item>
+                                    <item name="sortOrder" xsi:type="string">100</item>
+                                    <item name="displayArea" xsi:type="string">after-place-agreements</item>
+                                    <item name="dataScope" xsi:type="string">checkoutAgreements</item>
+                                    <item name="provider" xsi:type="string">checkoutProvider</item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                    <item name="after-place-agreements" xsi:type="array">
+                        <item name="component" xsi:type="string">uiComponent</item>
+                        <item name="displayArea" xsi:type="string">after-place-agreements</item>
+                        <item name="dataScope" xsi:type="string">before-place-order</item>
+                        <item name="provider" xsi:type="string">checkoutProvider</item>
+                        <item name="config" xsi:type="array">
+                            <item name="template" xsi:type="string">Magento_Checkout/payment/before-place-order</item>
+                        </item>
+                        <item name="children" xsi:type="array">
+                            <item name="agreementss" xsi:type="array">
+                                <item name="component" xsi:type="string">Magento_CheckoutAgreements/js/view/checkout-agreements</item>
+                                <item name="sortOrder" xsi:type="string">100</item>
+                                <item name="displayArea" xsi:type="string">after-place-agreements</item>
+                                <item name="dataScope" xsi:type="string">checkoutAgreements</item>
+                                <item name="provider" xsi:type="string">checkoutProvider</item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

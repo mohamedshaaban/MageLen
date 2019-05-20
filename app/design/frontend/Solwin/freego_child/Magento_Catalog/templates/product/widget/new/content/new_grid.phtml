@@ -1,0 +1,164 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+// @codingStandardsIgnoreFile
+?>
+<?php
+/**
+ * Template for displaying new products widget
+ *
+ * @var $block \Magento\Catalog\Block\Product\Widget\NewWidget
+ */
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$currencysymbol = $objectManager->get('Magento\Store\Model\StoreManagerInterface');
+$currency = $currencysymbol->getStore()->getCurrentCurrencyCode();
+
+
+if ($exist = ($block->getProductCollection() && $block->getProductCollection()->getSize())) {
+    $type = 'widget-new-grid';
+
+    $mode = 'grid';
+
+    $image = 'new_products_content_widget_grid';
+    $title = __('Popular');
+    $items = $block->getProductCollection()->getItems();
+
+    $showWishlist = true;
+    $showCompare = true;
+    $showCart = true;
+    $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::DEFAULT_VIEW;
+    $description = false;
+}
+?>
+<section style="background-color:#ffffff;" id="section2" class="menu_page">
+    <div class="container ">
+        <div class="">
+            <div class="clear"></div>
+<?php if ($exist): ?>
+    <div class="block-title-main">
+        <h2 role="heading" aria-level="2" class="section_title"><?php /* @escapeNotVerified */ echo $title; ?></h2>
+        <div class="title-border"></div>
+    </div>
+    <div style="margin-bottom: 0;float: left;width:100%;" class="pad-main-bottom block widget block-new-products <?php /* @escapeNotVerified */ echo $mode; ?>">
+
+        <div class="block-content">
+            <?php /* @escapeNotVerified */ echo '<!-- ' . $image . '-->' ?>
+            <div class="products-<?php /* @escapeNotVerified */ echo $mode; ?> <?php /* @escapeNotVerified */ echo $mode; ?>">
+                <ul style="margin: 30px 0 0;" class="product-items <?php /* @escapeNotVerified */ echo $type; ?>">
+                    <?php $iterator = 1; ?>
+
+                    <?php foreach ($items as $_item): ?>
+                        <li class="music music indexproduct col-md-2 col-sm-6 col-xs-12">
+                    <div class="newproduct-sep">
+                        <div class="newproduct-thumb">
+                            <a href="<?php /* @escapeNotVerified */ echo $block->getProductUrl($_item) ?>">
+                            <?php echo $block->getImage($_item, $image)->toHtml(); ?>
+                            <?php
+
+                            ?>
+                            </a>
+                        </div>
+                        <div class="newproduct-title-price">
+                            <div class="hover-layers">
+                                <?php if ($showWishlist || $showCompare || $showCart): ?>
+                                    <?php if ($_item->getTypeInstance()->hasRequiredOptions($_item)): ?>
+                                        <button class="action tocart "
+                                                data-mage-init='{"redirectUrl":{"url":"<?php /* @escapeNotVerified */ echo $block->getAddToCartUrl($_item) ?>"}}'
+                                                type="button" title="<?php /* @escapeNotVerified */ echo __('Add to Cart') ?>">
+                                            <i class="fas fa-cart-plus fa-2x"></i>
+                                        </button>
+                                        <a href="#"
+                                           data-post='<?php /* @escapeNotVerified */ echo $block->getAddToWishlistParams($_item); ?>'
+                                           class="action towishlist" data-action="add-to-wishlist"
+                                           title="<?php /* @escapeNotVerified */ echo __('Add to Wish List') ?>">
+                                            <i class="fas fa-heart fa-2x"></i>
+                                        </a>
+                                    <?php else: ?>
+                                        <?php
+                                        $postDataHelper = $this->helper('Magento\Framework\Data\Helper\PostHelper');
+                                        $postData = $postDataHelper->getPostData($block->getAddToCartUrl($_item), ['product' => $_item->getEntityId()])
+                                        ?>
+                                        <button class="action tocart "
+                                                data-post='<?php /* @escapeNotVerified */ echo $postData; ?>'
+                                                type="button" title="<?php /* @escapeNotVerified */ echo __('Add to Cart') ?>">
+                                            <i class="fas fa-cart-plus fa-2x"></i>
+                                        </button>
+
+                                            <a href="#"
+                                               data-post='<?php /* @escapeNotVerified */ echo $block->getAddToWishlistParams($_item); ?>'
+                                               class="action towishlist" data-action="add-to-wishlist"
+                                               title="<?php /* @escapeNotVerified */ echo __('Add to Wish List') ?>">
+                                                <i class="fas fa-heart fa-2x"></i>
+                                            </a>
+
+                                    <?php endif; ?>
+                                <?php endif; ?>
+                            </div>
+                            <div class="newproduct-price">
+
+                                <ins>
+													<span class="woocommerce-Price-amount amount">
+														<span class="woocommerce-Price-currencySymbol"><?php echo $currency ?> </span>
+                                                        <?php
+
+                                                        if($_item->getTypeId()=='bundle')
+                                                        {
+                                                            $bundleObj=$_item->getPriceInfo()->getPrice('final_price');
+                                                            echo ($bundleObj->getMinimalPrice());// For min price
+                                                        }
+                                                        else
+                                                        {
+                                                            echo ($_item->getFinalPrice(1))+0;
+                                                        }
+
+
+                                                        ?>
+
+                                                    </span>
+                                </ins>
+                                <?php
+                                if($_item->getTypeId()!='bundle')
+                                                        {
+                                                            if($_item->getFinalPrice() < $_item->getPrice()){
+                                                                ?>
+                                                                <del>
+													<span class="woocommerce-Price-amount amount">
+														<span class="woocommerce-Price-currencySymbol"><?php echo $currency; ?>  </span><?php echo $_item->getPrice()+0; ?></span>
+                                                                </del>
+                                                                <?php
+                                                            }
+                                                        }
+                                ?>
+                            </div>
+                            <div class="newproduct-title"><?php echo $block->escapeHtml($_item->getName()) ?></div>
+
+
+
+                                <div class="cff"><?php echo $block->escapeHtml($_item->getDescription()) ?>
+<!--                                    <a href="--><?php ///* @escapeNotVerified */ echo $block->getProductUrl() ?><!--" class="action more">--><?php ///* @escapeNotVerified */ echo __('Learn More') ?><!--</a></div>-->
+
+
+
+
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                        </li>
+
+
+
+
+
+                    <?php endforeach ?>
+                </ul>
+            </div>
+            <?php echo $block->getPagerHtml() ?>
+        </div>
+    </div>
+    </div>
+    </div>
+</section>
+<?php endif; ?>

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+
+        <section id="payment" translate="label" type="text" sortOrder="400" showInDefault="1" showInWebsite="1" showInStore="1" >
+            <group id="paytabs" translate="label"  sortOrder="91" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>PaysTabs</label>
+                <field id="title" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Title</label>
+                </field>
+                <field id="active" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="merchant_email" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Merchant Email</label>
+                </field>
+                <field id="secret_key" translate="label" type="obscure" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Secret Key</label>
+                    <comment></comment>
+                </field>  
+                <field id="order_status" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>New Order Status</label>
+                    <source_model>Magento\Sales\Model\Config\Source\Order\Status\NewStatus</source_model>
+                </field>
+                <field id="allowspecific" translate="label" type="allowspecific" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Payment from Applicable Countries</label>
+                    <source_model>Magento\Payment\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="51" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Payment from Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                </field>              
+                <field id="sort_order" translate="label" type="text" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sort Order</label>
+                </field>                
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+
+<config>
+	<modules>
+		<Ras_Paytabs>
+			<version>1.0</version>
+		</Ras_Paytabs>
+	</modules>
+	
+	
+    <global>
+        <models>
+            <paytabs>
+                <class>Ras_Paytabs_Model</class>
+            </paytabs>
+        </models>
+        <helpers>
+            <paytabs>
+                <class>Ras_Paytabs_Helper</class>
+            </paytabs>
+        </helpers>
+        <resources>
+            <paytabs_setup>
+                <setup>
+                    <module>Ras_Paytabs</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </paytabs_setup>
+            <paytabs_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </paytabs_write>
+            <paytabs_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </paytabs_read>
+        </resources>
+        <blocks>
+            <paytabs><class>Ras_Paytabs_Block</class></paytabs>
+        </blocks>        
+    </global>
+    
+   <frontend>
+		
+        <secure_url>
+            <paytabs_server>/paytabs/server</paytabs_server>
+        </secure_url>
+        
+        
+        <routers>
+            <paytabs>
+                <use>standard</use>
+                <args>
+                    <module>Ras_Paytabs</module>
+                    <frontName>paytabs</frontName>
+                </args>
+            </paytabs>
+        </routers>
+        
+        
+        <translate>
+            <modules>
+                <Ras_Paytabs>
+                    <files>
+                        <default>Ras_Paytabs.csv</default>
+                    </files>
+                </Ras_Paytabs>
+            </modules>
+        </translate>
+        
+        
+        <layout>
+            <updates>
+                <paytabs>
+                    <file>paytabs.xml</file>
+                </paytabs>
+            </updates>
+        </layout>
+        
+        
+   </frontend>
+	
+	
+   <adminhtml>
+        <translate>
+            <modules>
+                <Ras_Paytabs>
+                    <files>
+                        <default>Ras_Paytabs.csv</default>
+                    </files>
+                </Ras_Paytabs>
+            </modules>
+        </translate>
+    </adminhtml>
+    <default>
+        <payment>            
+            <paytabs_server>
+                <environment>1</environment>
+                <merchant_email backend_model="adminhtml/system_config_backend_encrypted"/>                
+                <model>paytabs/server</model>
+                <title>Paytabs</title>
+                <order_status>processing</order_status>
+                <allowspecific>0</allowspecific>
+            </paytabs_server>
+        </payment>
+    </default>
+    
+</config>

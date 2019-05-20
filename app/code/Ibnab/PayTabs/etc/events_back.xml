@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_order_payment_place_end">
+        <observer name="ibnab_paytabs_checkout_sales_order_payment_place_end" instance="Ibnab\PayTabs\Model\Observer\SalesOrderPaymentPlaceEnd"/>
+    </event>
+
+</config>

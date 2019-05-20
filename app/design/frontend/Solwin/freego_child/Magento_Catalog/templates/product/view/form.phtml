@@ -1,0 +1,186 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * Product view template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View
+ */
+?>
+<?php $_helper = $this->helper('Magento\Catalog\Helper\Output'); ?>
+<?php $_product = $block->getProduct(); ?>
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$luqidprod = $objectManager->create('Magento\Catalog\Model\Product')->load(2041);
+?>
+<div class="product-add-form">
+    
+<?php
+$_product = $this->getProduct(); $_productName = $_product->getName(); $_product_des = $_product->getShortDescription();  
+?>
+<div class="summary entry-summary">
+    <h2 class="section_title mb-0">
+        <?php echo $_productName; ?>
+    </h2>
+
+    <div class="woocommerce-product-details__short-description text-center">
+        <p>
+            <?php echo $_product_des ?> </p>
+    </div>
+	<?php if($_product->getTypeId() == "bundle"): ?>
+    <!-- <h3 class="text-center">Prescription
+        <input type="checkbox" id="myCheck" onclick="myFa()">
+    </h3> -->
+	
+    <div class="col-md-12" id="pws" style="opacity: 1;">
+        <div class="col-md-5">
+            <div class="eye-circle">
+                <div id="pow-L" style="font-size: 14px;font-weight: bold;" class="eye-power">0.00</div>
+            </div>
+            <div class="clear"></div>
+            <div class="inc-icnz">
+                <button id="fieldPrev" class="no-btxn button">
+                    <i class="fa fa-minus-circle gr-clr fa-2x" aria-hidden="true"></i>
+                </button> <?php /* @escapeNotVerified */ echo __('Left') ?>
+                <button id="fieldNext" class="no-btxn button">
+                    <i class="fa fa-plus-circle gr-clr fa-2x" aria-hidden="true"></i>
+                </button>
+            </div>
+
+        </div>
+        <div class="col-md-5">
+            <div class="eye-circle">
+                <div id="pow-R" style="font-size: 14px;font-weight: bold;" class="eye-power">0.00</div>
+            </div>
+            <div class="clear"></div>
+            <div class="inc-icnz">
+                <button id="fieldPrev1" class="no-btxn button incres-decres-button">
+                    <i class="fa fa-minus-circle gr-clr fa-2x" aria-hidden="true"></i>
+                </button> <?php /* @escapeNotVerified */ echo __('Right') ?>
+                <button id="fieldNext1" class="no-btxn button incres-decres-button">
+                    <i class="fa fa-plus-circle gr-clr fa-2x" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12" id="pws1" style="opacity: 1;">
+    <div class="col-md-10">
+            <span id="save_prescription" class="product-page-button">
+            <?php /* @escapeNotVerified */ echo __('Save Prescription') ?>
+            </span>
+    </div>
+    </div>
+<?php endif; ?>
+    </div>
+    <form data-product-sku="<?= $block->escapeHtml($_product->getSku()) ?>"
+          action="<?= /* @NoEscape */ $block->getSubmitUrl($_product) ?>" method="post"
+          id="product_addtocart_form"<?php if ($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+        <input type="hidden" name="product" value="<?= /* @escapeNotVerified */ $_product->getId() ?>" />
+        <input type="hidden" name="selected_configurable_option" value="" />
+        <input type="hidden" name="related_product" id="related-products-field" value="" />
+        <?= $block->getBlockHtml('formkey') ?>
+        <?= $block->getChildHtml('form_top') ?>
+        <?php if (!$block->hasOptions()):?>
+            <?= $block->getChildHtml('product_info_form_content') ?>
+        <?php else:?>
+            <?php if ($_product->isSaleable() && $block->getOptionsContainer() == 'container1'):?>
+                <?= $block->getChildChildHtml('options_container') ?>
+            <?php endif;?>
+        <?php endif; ?>
+
+        <?php if ($_product->isSaleable() && $block->hasOptions() && $block->getOptionsContainer() == 'container2'):?>
+            <?= $block->getChildChildHtml('options_container') ?>
+        <?php endif;?>
+        <?= $block->getChildHtml('form_bottom') ?>
+    </form>
+
+    <div id="popup-modal" style="display:none;">
+        <?php
+        $image = 'new_products_content_widget_grid';
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $listBlock = $objectManager->get('\Magento\Catalog\Block\Product\ListProduct');
+        $addToCartUrl =  $listBlock->getAddToCartUrl($luqidprod);
+        ?>
+        <style>
+            button.action-close{
+                display: none;
+            }
+.xcsd .product-page-button{
+    color: #000;
+    background: #ccc;
+}
+        </style>
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+
+                    <?php echo $block->getBlockHtml('formkey')?>
+                    <div class="liquid-box npb">
+
+                        <div class="news">
+
+                            <a href="#">
+                                <h3><?php echo $luqidprod->getName(); ?></h3>
+                            </a>
+                            <p><?php echo $luqidprod->getDescription(); ?></p>
+                            <label class="">Quantity</label>
+                            <form data-role="tocart-form" action="<?php echo $addToCartUrl; ?>" method="post">
+                                <input type="hidden" name="product" value="<?= /* @escapeNotVerified */ $luqidprod->getId() ?>" />
+                                <input type="hidden" name="selected_configurable_option" value="" />
+                                <input type="hidden" name="related_product" id="related-products-field" value="" />
+                                <?= $block->getBlockHtml('formkey') ?>
+                                <input name="qty" id="qty" value="1" title="Qty" class="input-text xty text" data-validate="{&quot;required-number&quot;:true,&quot;validate-item-quantity&quot;:{&quot;minAllowed&quot;:1,&quot;maxAllowed&quot;:10000}}" type="number">
+                                <div class="newsread">
+                                <button type="submit" name="add-to-cart" class="product-page-button">Add to cart</button>
+                            </div>
+                                <div class="newsread xcsd"  style="right: 0px;">
+                                    <button type="button" data-role="closeBtn" name="close" class="product-page-button">Close</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="news-thumb">
+                            <a href="#">
+
+                                <?php echo $block->getImage($luqidprod, $image)->toHtml(); ?>
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+<script>
+    require([
+        'jquery',
+        'priceBox'
+    ], function($){
+        var dataPriceBoxSelector = '[data-role=priceBox]',
+            dataProductIdSelector = '[data-product-id=<?= $block->escapeHtml($_product->getId()) ?>]',
+            priceBoxes = $(dataPriceBoxSelector + dataProductIdSelector);
+
+        priceBoxes = priceBoxes.filter(function(index, elem){
+            return !$(elem).find('.price-from').length;
+        });
+
+        priceBoxes.priceBox({'priceConfig': <?= /* @escapeNotVerified */ $block->getJsonConfig() ?>});
+    });
+</script>

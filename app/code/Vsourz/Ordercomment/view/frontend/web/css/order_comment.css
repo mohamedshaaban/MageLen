@@ -1,0 +1,178 @@
+.file-upload-type-allowed
+{
+	color:#000;
+	display:block;
+	padding: 7px 0px 0px 0px;
+	font-size : 11px;
+}
+.file-uploded
+{
+	overflow:hidden;
+	padding:7px 0;
+}
+.file-uploded .file-upload-status,
+.file-uploded .order-file-removelink
+{
+	float:left;
+	margin-right:15px;
+	font-size:12px;
+}
+
+.order-comment-removelink
+{
+	margin:0 0 10px 0;
+	vertical-align:middle;
+	display:inline-block;
+	font-size:11px;
+}
+
+.required-icon{
+	content: '*';
+    color: #e02b27;
+    font-size: 1.2rem;
+    margin: 0 0 0 5px;
+}
+.remove-comment-icon
+{
+	background: url(../images/del.png) left top no-repeat;
+	padding: 0px 20px;
+}
+.remove-file-icon{
+	background: url(../images/del.png) left top no-repeat;
+    padding: 0px 20px;
+	margin:6px 0px;
+}
+.order-file-removelink
+{
+	display: block;
+	margin:0;
+	vertical-align:middle;
+}
+
+.block-order-comments .order-comment-btn
+{
+	text-transform: uppercase;
+	min-width: 130px;
+    text-align: center;
+	margin:0;
+	clear:both;
+}
+.block-order-comments .block-order-for input
+{
+	border : 0;
+    padding:0px;
+	height:auto;
+}
+.block-order-comment .block-title,
+.block-order-comments .block-title{
+	font-size: 12px;
+	border:none;
+	padding:10px 0;
+}
+
+
+.order-for-block-title,
+.order-comment-block-title
+{
+	display: inline-block;
+	padding:12px 0 12px 12px;
+}
+.block-order-comments .block-inner .block-content
+{
+	border-top:1px solid #e1e1e1 ;
+	padding:12px;
+}
+.order-comments-status, .file-upload-status{
+	color:#1979c3;
+    padding:0px;
+	display:block;
+}
+.file-upload-disallowedtype{
+
+	color:#e02b27;
+    padding: 6px 0px;
+	display:block;
+}
+.order-comment-btn{
+    width: auto !important;
+    float: right !important;
+    margin:0;
+	border: 2px solid #dfaba0 !important;
+	background: #dfaba0 !important;
+	color: #fff;
+	padding: 6px;
+}
+.order-comment-btn:hover
+{
+    color:#fff;
+	background: #282828 !important;
+	border: 1px solid #006bb4;
+}
+.block-custom-info{
+    position:relative;
+    display:block;
+    margin-top:20px !important;
+}
+
+.block-custom-info-title
+{
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 300;
+    font-size: 16px;
+    font-family: 'latobold';
+	background:#dfaba0;
+	padding:12px;
+	margin:0;
+}
+
+    .block-order-comments{
+        display: block;
+        padding: 0px;
+  		/* border:1px solid #e1e1e1;*/
+		border-top:none;
+	}
+    .block-order-comments::after{
+        content:'';
+        position:relative;
+        display:block;
+        clear: both;
+    }
+     .block-order-comments .block-order-for,
+     .block-order-comments .block-order-comment{
+        width:auto;
+        float:none;
+        padding: 0px;
+     }
+
+	.block-order-comments .block-inner
+	{
+		padding:0;
+		border:none;
+	}
+
+	 .block-order-comments .submit-btn
+	 {
+		 padding:12px;
+	 	 border-top:1px solid #e1e1e1;
+	 	 clear:both;
+		 overflow:hidden;
+	 }
+    .block-order-comments .block-order-comment .block-inner{
+        margin-left:0px;
+     }
+
+@media screen and (max-width:550px) {
+    .block-order-comments .block-order-for, .block-order-comments .block-order-comment {
+        display: block;
+        width: 100%;
+        float: none;
+        padding: 2px;
+    }
+    .block-order-comments .block-order-for .block-inner, .block-order-comments .block-order-comment .block-inner {
+        margin: 0px;
+    }
+    .block-order-comments .block-order-comment {
+        margin-top: 10px;
+    }
+}

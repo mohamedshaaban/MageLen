@@ -1,0 +1,22 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * Category left navigation
+ *
+ * @var $block \Magento\Catalog\Block\Navigation
+ */
+?>
+<?php if (!$block->getCategory()) {
+    return;
+} ?>
+<?php $_categories = $block->getCurrentChildCategories(); ?>
+<?php $_count = is_array($_categories) ? count($_categories) : $_categories->count(); ?>
+<?php if ($_count): ?>
+
+<?php endif; ?>

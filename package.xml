@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<package>
+    <name>Ras_Paytabs</name>
+    <version>1.1.0</version>
+    <stability>stable</stability>
+    <license>MIT License</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Online payment System with fraud prevention</summary>
+    <description>We provide solutions to fit your needs according to your business model. Two days is all thats required to integrate your website with our current platform. If your website is ready - we have the integration solution for you.</description>
+    <notes>1.1.0&#xD;
+&#xD;
+Replaced API to secret key authentication&#xD;
+&#xD;
+Changed to API v2&#xD;
+&#xD;
+&#xD;
+&#xD;
+1.0.0&#xD;
+&#xD;
+Validate Merchant ID Password&#xD;
+&#xD;
+Support for more arabic languages&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+0.1.8&#xD;
+&#xD;
+Updated Server Details paytabs.co to paytabs.com&#xD;
+&#xD;
+&#xD;
+&#xD;
+v 0.1.7&#xD;
+&#xD;
+Added Language translation,&#xD;
+&#xD;
+Added new Order Status,&#xD;
+&#xD;
+Additional validation added</notes>
+    <authors><author><name>PayTabs</name><user>PayTabs</user><email>subs@paytabs.co</email></author></authors>
+    <date>2015-08-20</date>
+    <time>08:52:44</time>
+    <contents><target name="magelocal"><dir name="Ras"><dir name="Paytabs"><dir name="Block"><dir name="Adminhtml"><dir name="System"><dir name="Config"><dir name="Form"><file name="Button.php" hash="782264955cb5892f5090b42ebffa99be"/></dir></dir></dir></dir><dir name="Payment"><file name="Info.php" hash="752f6a56a5131fae3c93aa9c88d4c8c3"/></dir><dir name="Server"><file name="Form.php" hash="ae5111ae965e40d6855d5146b2e62270"/><file name="Redirect.php" hash="01047fecfc5df98759a5b3072f0b2a68"/></dir></dir><dir name="Controller"><file name="Abstract.php" hash="10b18c23f8f86bda168a8861539646ff"/></dir><dir name="Helper"><file name="Data.php" hash="f354ab6f8aba99e69d01bf4666bc5cdf"/></dir><dir name="Model"><file name="Info.php" hash="cf4a4ffc6bb0cf4125e2193f13d84316"/><file name="Server.php" hash="d5ada99b4cb4aa78638f01945695b0f8"/><file name="Testlive.php" hash="e5b0afe739711c195b9019467aa4e738"/></dir><dir name="controllers"><dir name="Adminhtml"><file name="PaytabstweaksController.php" hash="98f317fa61308643071d44d959934d8d"/></dir><file name="ServerController.php" hash="27d6c6ca5d877532d41bea855d66c479"/></dir><dir name="etc"><file name="config.xml" hash="9525ccc392b32c3fec5f6958897ce34e"/><file name="system.xml" hash="51ce95c10b18217b1cfc34220a9d33c4"/></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="template"><dir name="Ras_Paytabs"><dir name="system"><dir name="config"><file name="button.phtml" hash="3a82d7eeeea23200fe47dc7dbbe43ac8"/></dir></dir></dir></dir></dir></dir></dir></target><target name="mageskin"><dir name="frontend"><dir name="base"><dir name="default"><dir name="paytabs"><file name="cards.png" hash="4165a17f5b42cb26a756a53a27ba2556"/></dir></dir></dir></dir></target><target name="magelocale"><dir name="en_US"><file name="Ras_Paytabs.csv" hash="985174ba2a56bddea12288c78e455d8f"/></dir><dir name="ar_AE"><file name="Ras_Paytabs.csv" hash="96079fdd844994dffe7a16e9d977e47f"/></dir><dir name="ar_BH"><file name="Ras_Paytabs.csv" hash="96079fdd844994dffe7a16e9d977e47f"/></dir><dir name="ar_DZ"><file name="Ras_Paytabs.csv" hash="96079fdd844994dffe7a16e9d977e47f"/></dir><dir name="ar_EG"><file name="Ras_Paytabs.csv" hash="96079fdd844994dffe7a16e9d977e47f"/></dir><dir name="ar_IQ"><file name="Ras_Paytabs.csv" hash="96079fdd844994dffe7a16e9d977e47f"/></dir><dir name="ar_JO"><file name="Ras_Paytabs.csv" hash="96079fdd844994dffe7a16e9d977e47f"/></dir><dir name="ar_KW"><file name="Ras_Paytabs.csv" hash="96079fdd844994dffe7a16e9d977e47f"/></dir><dir name="ar_LB"><file name="Ras_Paytabs.csv" hash="96079fdd844994dffe7a16e9d977e47f"/></dir><dir name="ar_LY"><file name="Ras_Paytabs.csv" hash="96079fdd844994dffe7a16e9d977e47f"/></dir><dir name="ar_MA"><file name="Ras_Paytabs.csv" hash="96079fdd844994dffe7a16e9d977e47f"/></dir><dir name="ar_OM"><file name="Ras_Paytabs.csv" hash="96079fdd844994dffe7a16e9d977e47f"/></dir><dir name="ar_QA"><file name="Ras_Paytabs.csv" hash="96079fdd844994dffe7a16e9d977e47f"/></dir><dir name="ar_SA"><file name="Ras_Paytabs.csv" hash="96079fdd844994dffe7a16e9d977e47f"/></dir><dir name="ar_SD"><file name="Ras_Paytabs.csv" hash="96079fdd844994dffe7a16e9d977e47f"/></dir><dir name="ar_SY"><file name="Ras_Paytabs.csv" hash="96079fdd844994dffe7a16e9d977e47f"/></dir><dir name="ar_TN"><file name="Ras_Paytabs.csv" hash="96079fdd844994dffe7a16e9d977e47f"/></dir><dir name="ar_YE"><file name="Ras_Paytabs.csv" hash="96079fdd844994dffe7a16e9d977e47f"/></dir></target><target name="mageetc"><dir name="modules"><file name="Ras_Paytabs.xml" hash="ce0577d37708b0d523afc6f026437ed9"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.3.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

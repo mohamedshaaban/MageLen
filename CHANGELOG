@@ -1,0 +1,107 @@
+1.5.35 (2018-08-14)
+    - Fixed fatal error on collection page in Magento 2.1.x.
+1.5.34 (2018-08-01)
+    - Improved support for responsive grid view.
+1.5.33 (2018-06-07)
+    - Removed 'Caption source' option.
+1.5.32 (2018-05-18)
+    - Added support for Magento v2.2.4.
+    - Improved support for Sirv module.
+    - Improved support for Magento Swatches module.
+    - Improved support for Magento Configurable Product module.
+    - Improved support for Magento Product Video module.
+1.5.31 (2018-05-02)
+    - Added 'Display spin' option.
+1.5.30 (2018-04-10)
+    - Fixed an issue with displaying headers in some specific themes.
+    - Fixed some issues with 360 spin when product has no product images.
+    - Fixed an issue with "Product Video" module widget in Magento v2.0.x.
+1.5.29 (2018-03-05)
+    - Improved original gallery support for Magento v2.2.x.
+    - Fixed an issue with playing vimeo video after switching options.
+1.5.28 (2018-01-17)
+    - Added support for 'gallery_switch_strategy' option.
+    - Fixed an issue with loading wrong associated products images.
+1.5.27 (2017-11-07)
+    - Fixed an issue with loading product settings page when Magic360 module is not installed.
+1.5.26 (2017-11-01)
+    - Added promo text of Siv app.
+1.5.25 (2017-10-30)
+    - Added support for Magento v2.2.0.
+1.5.24 (2017-10-16)
+    - Added 'play' icon for video thumbnails.
+    - Fixed an issue with highlighting thumbnails.
+1.5.23 (2017-09-18)
+    - Added native video support for MagicThumb module.
+1.5.22 (2017-09-13)
+    - Added small fix for Magento Swatches module.
+1.5.21 (2017-08-11)
+    - Added multi-language support.
+1.5.20 (2017-07-19)
+    - Added small fix for left/right layouts.
+1.5.19 (2017-07-06)
+    - Fixed an issue with slow page loading, when product has many images.
+    - Fixed an issue on search page when the module is enabled on the category page.
+1.5.18 (2017-06-07)
+    - Fixed an issue when Sirv overrides original image factory that used in Magic360.
+    - Added fix for reseting Magento styles for MagicSlideshow buttons.
+    - Fixed an issue with wrong watermark and placeholder images on category page.
+1.5.17 (2017-05-25)
+    - Fixed an duplicated product image issue on category page.
+1.5.16 (2017-05-18)
+    - Fixed an issue with copying 360 icon in Magento v2.1.6.
+1.5.15 (2017-05-15)
+    - Fixed an issue with switching thumbnails after selecting the swatch.
+1.5.14 (2017-05-05)
+    - Fixed some issues with compatibility of Magic 360 module with Magento v2.1.6.
+    - Fixed an issue with uploading 360 images when 'Media Storage' option is set to 'Database'.
+    - Fixed an issue on the product settings page when 360 image doesn't exist.
+    - Added compatibility with MagicToolbox/Sirv module.
+1.5.13 (2017-04-31)
+    - Added support for Magento v2.1.6
+1.5.12 (2017-03-22)
+    - Added support for new Magic Thumb 3.0
+1.5.11 (2017-02-28)
+    - Changed default values for some options.
+    - Added an extra tip for 'Zoom mode' option.
+    - Updated label and description of the 'Link enlarged image to the product page' option.
+1.5.10 (2017-02-10)
+    - Fixed an issue that was causing Magento to break in some versions of Internet Explorer.
+1.5.9 (2016-12-13)
+    - Magic Zoom and Magic Zoom Plus updated to the most recent versions.
+1.5.8 (2016-11-30)
+    - Minor improvements.
+1.5.7 (2016-11-28)
+    - Minor improvements.
+1.5.6 (2016-10-20)
+    - Added support for 'Minify JavaScript Files' and 'Minify CSS Files' options.
+1.5.5 (2016-10-12)
+    - Fixed an issue with image files which do not exist in the file system.
+1.5.4 (2016-09-28)
+    - Improved import images settings page.
+1.5.3 (2016-09-26)
+    - Added feature to import bulk images for Magic 360.
+1.5.2 (2016-09-13)
+    - Added compatibility with older versions (Magento v2.0.x).
+1.5.1 (2016-08-29)
+    - Fixed an issue with updating the gallery via AJAX.
+1.5.0 (2016-08-15)
+    - Added support for Magento v2.1.x
+1.4.0 (2016-07-29)
+    - Added support for category page.
+1.3.1 (2016-07-07)
+    - Fixed an issue with Magic360 when saving new products.
+1.3.0 (2016-06-14)
+    - Added support for Magento Product Video module.
+1.2.2 (2016-06-08)
+    - Magic Zoom and Magic Zoom Plus updated to the latest version.
+1.2.0 (2016-04-12)
+    - Added support for Magento Swatches module.
+    - Added support for Magento Configurable Product module.
+    - Added improvements for Magic360 and MagicZoomPlus can be used together on the product page.
+    - Added improvements for Magic360 and original gallery can be used together on the product page.
+1.1.0 (2016-03-21)
+    - Added improvements for better working of the modules with each other.
+    - Added Magic360 module for Magento 2.
+1.0.0 (2016-02-19)
+    - Modules for Magento 2 created (MagicScroll, MagicSlideshow, MagicZoom, MagicZoomPlus, MagicThumb).
